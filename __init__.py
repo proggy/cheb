@@ -17,22 +17,34 @@ __created__ = '2013-07-04'
 __modified__ = '2013-07-04'
 import numpy
 
+# if module "frog" exists, use it, otherwise, create a dummy decorator
+try:
+  from frog import Frog
+except ImportError:
+  class Frog(object):
+    # dummy decorator
+    def __init__(self, *args, **kwargs):
+      pass
+    def __call__(self, func):
+      return func
 
 
 
+
+optdoc = dict(n='set polynomial order', kind='set kind', symbol='set symbol')
+@Frog(informat='ARGS', infiles=0, optdoc=optdoc)
 def cheb(n=0, kind=1, symbol='x'):
-  """Calculate Chebyshev polynomial of n "n" of first or second kind
+  """Calculate Chebyshev polynomial of order "n" of first or second kind
   using iterative formula. Return numpy.poly1d object.
 
   Example:
   >>> import cheb
   >>> print cheb.cheb(2)
-     2 
-  2 x - 1
+  >    2 
+  > 2 x - 1
   >>> print cheb.cheb(n=3, kind=2, symbol='y')
-     3
-  8 y - 4 y
-  """
+  >    3
+  > 8 y - 4 y"""
   # former tb.kpm._Cheb (developed 2011-09-14 until 2011-11-21)
   # former tb._Cheb (developed 2011-01-17 until 2011-04-08)
   __created__ = '2013-07-04'
