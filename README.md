@@ -6,7 +6,7 @@ Implement a function in Python that calculates Chebychev polynomials of first or
 
 
 Copyright information
-=====================
+---------------------
 
 Copyright (C) 2013 Daniel Jung
 Contact: d.jung@jacobs-university.de
