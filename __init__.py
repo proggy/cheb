@@ -10,7 +10,8 @@ Author:  Daniel Jung, Jacobs University Bremen, Bremen, Germany.
 Contact: d.jung@jacobs-university.de
 
 To do:
---> let poly1d object have a display hook for pretty printing in IPython
+--> let poly1d object have a display hook for pretty printing in IPython 
+    notebook
 """
 __created__ = '2013-07-04'
 __modified__ = '2013-07-04'
