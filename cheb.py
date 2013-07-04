@@ -1,19 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""Implement a function that computes Chebychev polynomials iteratively.
-Chebychev polynomials play a central role within the kernel polynomial
-method [1].
-
-[1] Weiße et al., Rev. Mod. Phys. 78, 275 (2006)"""
-__created__ = '2013-07-04'
-__modified__ = '2013-07-04'
-"""
-To do:
---> let poly1d object have a display hook for pretty printing in IPython
-    notebook
-"""
-
-
+#
+# Copyright notice
+# ----------------
+#
 # Copyright (C) 2013 Daniel Jung
 # Contact: d.jung@jacobs-university.de
 #
@@ -30,6 +20,19 @@ To do:
 # You should have received a copy of the GNU General Public License along
 # with this program; if not, write to the Free Software Foundation, Inc.,
 # 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.
+#
+"""Implement a function that computes Chebychev polynomials iteratively.
+Chebychev polynomials play a central role within the kernel polynomial
+method [1].
+
+[1] Weiße et al., Rev. Mod. Phys. 78, 275 (2006)"""
+__created__ = '2013-07-04'
+__modified__ = '2013-07-04'
+"""
+To do:
+--> let poly1d object have a display hook for pretty printing in IPython
+    notebook
+"""
 
 
 import numpy
