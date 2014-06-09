@@ -21,49 +21,39 @@
 # with this program; if not, write to the Free Software Foundation, Inc.,
 # 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.
 #
-"""Implement a function that computes Chebychev polynomials iteratively.
+"""Implement a function that computes Chebychev polynomials using recursive
+formulas.
+
+
+Background
+----------
+
 Chebychev polynomials play a central role within the kernel polynomial
 method [1].
 
 [1] Weiße et al., Rev. Mod. Phys. 78, 275 (2006)"""
-__created__ = '2013-07-04'
-__modified__ = '2013-07-17'
-"""
-To do:
---> let poly1d object have a display hook for pretty printing in IPython
-    notebook
-"""
-
-
+# 2013-07-04 - 2014-06-09
+# To do:
+# --> let poly1d object have a display hook for pretty printing in IPython
+#     notebook
 import numpy
-try:
-    from frog import Frog
-except ImportError:
-    class Frog(object):
-        # dummy decorator
-        def __init__(self, *args, **kwargs):
-            pass
-
-        def __call__(self, func):
-            return func
 
 
-optdoc = dict(n='set polynomial order', kind='set kind', symbol='set symbol')
-
-
-@Frog(optdoc=optdoc, inmap=dict(n='$0'), preproc=dict(n=int))
 def cheb(n=0, kind=1, symbol='x'):
     """Calculate Chebyshev polynomial of order "n" of first or second kind
     using iterative formula. Return numpy.poly1d object.
 
-    Example:
+
+    Example
+    -------
+
     >>> import cheb
     >>> print cheb.cheb(2)
-    >    2
-    > 2 x - 1
+       2
+    2 x - 1
     >>> print cheb.cheb(n=3, kind=2, symbol='y')
-    >    3
-    > 8 y - 4 y"""
+       3
+    8 y - 4 y"""
     # former tb.kpm._Cheb (developed 2011-09-14 until 2011-11-21)
     # former tb._Cheb (developed 2011-01-17 until 2011-04-08)
     # 2013-07-04 - 2013-07-04
@@ -100,3 +90,8 @@ def cheb(n=0, kind=1, symbol='x'):
         return U[n]
     else:
         raise ValueError('kind must be 1 or 2')
+
+
+def __main__():
+    import doctest
+    doctest.testmod()
